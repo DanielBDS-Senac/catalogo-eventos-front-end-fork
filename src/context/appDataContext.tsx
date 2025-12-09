@@ -7,6 +7,7 @@ import React, {
   useState,
 } from "react";
 import type { Cidade, Evento, PontoTuristico } from "../domain";
+import data from "../bff/data"
 
 const LS_KEY = "douradosplus-data-v1";
 
@@ -54,13 +55,14 @@ const initialState: AppState = {
 
 function loadFromStorage(): AppState | null {
   try {
-    const raw = localStorage.getItem(LS_KEY);
-    if (!raw) return null;
-    const parsed = JSON.parse(raw);
-    if (parsed.events && parsed.cidades) {
+    // const raw = localStorage.getItem(LS_KEY);
+    // if (!raw) return null;
+    // const parsed = JSON.parse(raw);
+    const {eventos, cidades} = data;
+    if (eventos && cidades) {
       return {
-        eventos: parsed.events,
-        cidades: parsed.cidades,
+        eventos,
+        cidades,
       };
     }
     return null;
