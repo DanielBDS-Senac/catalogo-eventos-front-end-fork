@@ -1,5 +1,5 @@
 // src/shared/ui/IconButton.tsx
-import type { ButtonHTMLAttributes, PropsWithChildren } from 'react'
+import type { ButtonHTMLAttributes, PropsWithChildren } from 'react';
 import {
   forwardRef,
 } from "react";
@@ -33,7 +33,7 @@ export const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(
       <button
         ref={ref}
         type={type}
-        className={`inline-flex items-center justify-center rounded-full text-sm text-[#e9f2ff] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-slate-950 focus:ring-[#74f1ff] ${sizeClasses} ${variantClasses} ${className}`}
+        className={`inline-flex items-center justify-center rounded-full text-sm text-[#25b309] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-slate-950 focus:ring-[#20aa4b] ${sizeClasses} ${variantClasses} ${className}`}
         {...rest}
       >
         {children}

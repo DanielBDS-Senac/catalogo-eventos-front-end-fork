@@ -1,5 +1,5 @@
 // src/shared/ui/Button.tsx
-import type { ButtonHTMLAttributes, PropsWithChildren } from 'react'
+import type { ButtonHTMLAttributes, PropsWithChildren } from 'react';
 import {
   forwardRef,
 } from "react";
@@ -16,11 +16,11 @@ export interface ButtonProps
 }
 
 const base =
-  "inline-flex items-center justify-center rounded-xl border text-xs font-semibold transition focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-slate-950 focus:ring-[#74f1ff] disabled:opacity-60 disabled:cursor-not-allowed";
+  "inline-flex items-center justify-center rounded-xl border text-xs font-semibold transition focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-slate-950 focus:ring-[#20aa4b] disabled:opacity-60 disabled:cursor-not-allowed";
 
 const variants: Record<Variant, string> = {
   primary:
-    "border-[#a58cff]/60 bg-gradient-to-r from-[#74f1ff]/30 to-[#a58cff]/30 hover:from-[#74f1ff]/40 hover:to-[#a58cff]/40 text-[#007389]",
+    "border-[#48cb76]/60 bg-gradient-to-r from-[#20aa4b]/30 to-[#48cb76]/30 hover:from-[#20aa4b]/40 hover:to-[#48cb76]/40 text-[#007389]",
   secondary:
     "border-white/10 bg-white/10 hover:bg-white/15 text-[#607389]",
   danger:

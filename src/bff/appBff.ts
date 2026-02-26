@@ -1,20 +1,23 @@
 // src/bff/appBff.ts
 import type { AppState } from "../context/appDataContext";
-import type { Cidade, Evento } from "../domain";
+import type { Cidade, Evento, PontoTuristico } from "../domain";
 import { api } from "../http/api";
 
 // --------- Carga inicial ---------
 export async function fetchAppState(): Promise<AppState> {
-  const [eventosRes, cidadesRes] = await Promise.all([
+  const [eventosRes, cidadesRes, pontosRes] = await Promise.all([
     api.get<Evento[]>("/eventos"),
     api.get<Cidade[]>("/cidades"),
+    api.get<PontoTuristico[]>("/pontos")
   ]);
   console.log("fetchAppState: eventos", eventosRes.data);
   console.log("fetchAppState: cidades", cidadesRes.data);
+  console.log("fetchAppState: pontos", pontosRes.data);
 
   return {
     eventos: eventosRes.data,
     cidades: cidadesRes.data,
+    pontos: pontosRes.data,
   };
 }
 

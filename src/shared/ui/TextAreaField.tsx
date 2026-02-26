@@ -33,7 +33,7 @@ export const TextAreaField: React.FC<TextAreaFieldProps> = ({
         id={textAreaId}
         aria-describedby={describedBy}
         aria-invalid={!!error}
-        className={`rounded-xl border px-3 py-2 outline-none bg-white/10 border-white/20 focus:border-[#74f1ff] focus:ring-2 focus:ring-[#74f1ff]/60 resize-none ${className}`}
+        className={`rounded-xl border px-3 py-2 outline-none bg-white/10 border-white/20 focus:border-[#20aa4b] focus:ring-2 focus:ring-[#20aa4b]/60 resize-none ${className}`}
         {...rest}
       />
       {hint && !error && (

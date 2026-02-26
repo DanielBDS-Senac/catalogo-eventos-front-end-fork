@@ -27,10 +27,10 @@ export default {
         bg: "#0b0f14",
         card: "rgba(255,255,255,0.06)",
         muted: "#9fb0c8",
-        text: "#e9f2ff",
-        brand1: "#74f1ff",
+        text: "#25b309",
+        brand1: "#20aa4b",
         brand2: "#7cffc1",
-        brand3: "#a58cff",
+        brand3: "#48cb76",
       },
       borderRadius: {
         radius: "20px",
@@ -52,7 +52,7 @@ body {
   margin: 0;
   min-height: 100vh;
   overflow-x: hidden;
-  color: #e9f2ff;
+  color: #25b309;
   background: radial-gradient(1200px 800px at 10% -10%, rgba(116,241,255,.15), transparent),
               radial-gradient(1000px 600px at 110% 10%, rgba(165,140,255,.12), transparent),
               linear-gradient(180deg, #0a0d12, #0b0f14 30%, #0b0f14 70%, #0a0d12);

@@ -24,17 +24,17 @@ export default function Header({
           onClick={() => handleSideMenuOpen()}
         >
           <span
-            className={`h-[3px] rounded bg-[#e9f2ff] transition-transform ${
+            className={`h-[3px] rounded bg-[#25b309] transition-transform ${
               open ? "translate-y-[9px] rotate-45" : ""
             }`}
           />
           <span
-            className={`h-[3px] rounded bg-[#e9f2ff] transition-opacity ${
+            className={`h-[3px] rounded bg-[#25b309] transition-opacity ${
               open ? "opacity-0" : "opacity-100"
             }`}
           />
           <span
-            className={`h-[3px] rounded bg-[#e9f2ff] transition-transform ${
+            className={`h-[3px] rounded bg-[#25b309] transition-transform ${
               open ? "-translate-y-[9px] -rotate-45" : ""
             }`}
           />
@@ -51,16 +51,16 @@ export default function Header({
             Celeiro do <span className="opacity-70">MS</span>
           </span>
           </Link>
-          <Link to="/turismo" className="text-sm text-blue-400 hover:underline">
-            Turismo
+          <Link to="/turismo" className="text-sm text-blue-400 hover:bg-white/10 outline-none rounded">
+            Pontos turísticos
           </Link>
           {/* <Link to="/cidades" className="text-sm text-blue-400 hover:underline">
             Cidades
           </Link> */}
-          <Link to="/eventos" className="text-sm text-blue-400 hover:underline">
+          <Link to="/eventos" className="text-sm text-blue-400 hover:bg-white/10 outline-none rounded">
             Eventos
           </Link>
-          <Link to="/sobre" className="text-sm text-blue-400 hover:underline">
+          <Link to="/sobre" className="text-sm text-blue-400 hover:bg-white/10 outline-none rounded">
             Sobre
           </Link>
         </div>

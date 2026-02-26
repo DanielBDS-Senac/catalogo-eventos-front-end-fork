@@ -9,10 +9,10 @@ export default {
         bg: "#0b0f14",
         card: "rgba(255,255,255,0.06)",
         muted: "#9fb0c8",
-        text: "#e9f2ff",
-        brand1: "#74f1ff",
+        text: "#25b309",
+        brand1: "#20aa4b",
         brand2: "#7cffc1",
-        brand3: "#a58cff",
+        brand3: "#48cb76",
       },
       borderRadius: {
         radius: "20px",

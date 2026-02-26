@@ -9,10 +9,10 @@ interface TagProps extends PropsWithChildren {
 }
 
 const variantClasses: Record<TagVariant, string> = {
-  default: "bg-white/10 text-[#e9f2ff] border-white/10",
-  outline: "bg-transparent text-[#e9f2ff] border-white/20",
-  success: "bg-emerald-500/15 text-emerald-200 border-emerald-500/40",
-  warning: "bg-amber-500/15 text-amber-200 border-amber-500/40",
+  default: "bg-white/10 text-[#25b309]/40 border-[#25b309]/50",
+  outline: "bg-transparent text-[#25b309]/50 border-[#25b309]/30",
+  success: "bg-emerald-500/15 text-emerald-300 border-emerald-500/40",
+  warning: "bg-red-500/15 text-red-200 border-red-500/40",
 };
 
 export const Tag: React.FC<TagProps> = ({

@@ -14,6 +14,7 @@ import type { Cidade, Evento, PontoTuristico } from "../domain";
 export interface AppState {
   eventos: Evento[];
   cidades: Cidade[];
+  pontos: PontoTuristico[];
 }
 
 interface AppDataContextValue {
@@ -59,6 +60,7 @@ const createId = () => {
 const emptyState: AppState = {
   eventos: [],
   cidades: [],
+  pontos: [],
 };
 
 function loadFromStorage(): AppState | null {
@@ -69,7 +71,8 @@ function loadFromStorage(): AppState | null {
     if (parsed.events && parsed.cidades) {
       return {
         eventos: parsed.events,
-        cidades: parsed.cidades,
+        cidades: parsed.cidades || [],
+        pontos: parsed.pontos || [],
       };
     }
     return null;
@@ -196,6 +199,7 @@ export const AppDataProvider: React.FC<React.PropsWithChildren> = ({
         uf: cidade.uf || "MS",
         desc: cidade.desc ?? "",
         pontos: existente?.pontos ?? [],
+        eventos: existente?.eventos ?? [],
       }
       try {
         let saved;

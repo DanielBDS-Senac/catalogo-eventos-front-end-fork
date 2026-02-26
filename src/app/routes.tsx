@@ -1,9 +1,10 @@
 import React from "react";
 import { DouradosEventosPage } from "../features/eventos/pages/DouradosEventosPage";
 import AboutPage from "../pages/AboutPage";
+import DetailsPage from "../pages/Details";
 import EventosPage from "../pages/EventosPage";
-import DefaultTemplate from "../shared/templates/DefaultTemplate";
 import TourismPage from "../pages/TourismPage";
+import DefaultTemplate from "../shared/templates/DefaultTemplate";
 
 export interface RouteConfig {
   path: string;
@@ -19,7 +20,9 @@ export const AppRoutes: RouteConfig[] = [
       { path: "/", element: <DouradosEventosPage /> },
       { path: "/eventos", element: <EventosPage /> },
       { path: "/sobre", element: <AboutPage /> },
-      { path: "/turismo", element: <TourismPage /> }
+      { path: "/turismo", element: <TourismPage /> },
+      { path: "/detalhes/:id", element: <DetailsPage /> },
+      {  path: "*", element: <div className="p-4 text-center text-sm text-[#9fb0c8]">Página não encontrada</div> },
     ],
   },
 ];
