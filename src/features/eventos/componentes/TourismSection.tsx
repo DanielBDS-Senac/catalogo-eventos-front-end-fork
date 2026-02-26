@@ -1,6 +1,6 @@
 import React from "react";
 import type { Cidade, PontoTuristico } from "../../../domain";
-import { Button, Card, SelectField } from "../../../shared/ui";
+import { Button, Card, SelectField, TextField } from "../../../shared/ui";
 
 interface TourismSectionProps {
   cidades: Cidade[];
@@ -42,29 +42,24 @@ export const TourismSection: React.FC<TourismSectionProps> = ({
       <div className="lg:col-span-2 flex flex-col gap-4">
         <Card className="p-4">
           <div className="flex flex-col md:flex-row gap-3 items-stretch">
-            <label className="flex-1 text-sm flex flex-col gap-1">
-              <span>Cidade</span>
-              <SelectField
-                label="Cidade"
-                value={cidadeSelecionadaId ?? ""}
-                onChange={(e) => onCidadeSelecionadaChange(e.target.value)}
-              >
-                {cidades.map((c) => (
-                  <option key={c.id} value={c.id}>
-                    {c.nome} - {c.uf}
-                  </option>
-                ))}
-              </SelectField>
-            </label>
-            <label className="flex-1 text-sm flex flex-col gap-1">
-              <span>Buscar ponto</span>
-              <input
-                className="w-full rounded-xl border border-white/20 bg-white/10 px-3 py-2 text-sm outline-none"
-                placeholder="Ex.: Parque, Museu…"
-                value={buscaPonto}
-                onChange={(e) => onBuscaPontoChange(e.target.value)}
-              />
-            </label>
+            <SelectField
+              label="Cidade"
+              value={cidadeSelecionadaId ?? ""}
+              onChange={(e) => onCidadeSelecionadaChange(e.target.value)}
+            >
+              {cidades.map((c) => (
+                <option key={c.id} value={c.id}>
+                  {c.nome} - {c.uf}
+                </option>
+              ))}
+            </SelectField>
+            <TextField
+              label="Buscar ponto turístico"
+              className="w-full rounded-xl border border-white/20 bg-white/10 px-3 py-2 text-sm outline-none"
+              placeholder="Ex.: Parque, Museu…"
+              value={buscaPonto}
+              onChange={(e) => onBuscaPontoChange(e.target.value)}
+            />
           </div>
 
           <div className="mt-3 flex flex-wrap gap-2">
@@ -93,10 +88,7 @@ export const TourismSection: React.FC<TourismSectionProps> = ({
             </Card>
           ) : (
             pontosFiltrados.map((p) => (
-              <Card
-                key={p.id}
-                className="overflow-hidden flex flex-col"
-              >
+              <Card key={p.id} className="overflow-hidden flex flex-col">
                 <img
                   src={p.img || ""}
                   alt="Imagem do ponto turístico"

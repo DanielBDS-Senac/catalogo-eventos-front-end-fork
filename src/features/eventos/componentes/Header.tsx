@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Logo from "../../../assets/celeiro_ms_logo.jpg";
 
 export interface HeaderProps {
@@ -40,6 +41,7 @@ export default function Header({
         </button>
 
         <div className="flex items-center gap-3">
+          <Link to="/" className="flex items-center gap-3">
           <img
             src={Logo}
             alt="Logo do Celeiro do MS"
@@ -48,6 +50,19 @@ export default function Header({
           <span className="font-extrabold tracking-[0.05em] text-lg">
             Celeiro do <span className="opacity-70">MS</span>
           </span>
+          </Link>
+          <Link to="/turismo" className="text-sm text-blue-400 hover:underline">
+            Turismo
+          </Link>
+          {/* <Link to="/cidades" className="text-sm text-blue-400 hover:underline">
+            Cidades
+          </Link> */}
+          <Link to="/eventos" className="text-sm text-blue-400 hover:underline">
+            Eventos
+          </Link>
+          <Link to="/sobre" className="text-sm text-blue-400 hover:underline">
+            Sobre
+          </Link>
         </div>
 
         {handleShowFilters && (

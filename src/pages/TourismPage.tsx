@@ -1,7 +1,7 @@
 import { useMemo, useState } from "react";
-import type { Cidade, PontoTuristico } from "../domain";
-import { Button, Card } from "../shared/ui";
 import { useAppData } from "../context/appDataContext";
+import type { Cidade, PontoTuristico } from "../domain";
+import { Button, Card, SelectField, TextField } from "../shared/ui";
 
 interface TourismSectionProps {
   cidades: Cidade[];
@@ -63,29 +63,24 @@ const TourismPage: React.FC = () => {
       <div className="lg:col-span-2 flex flex-col gap-4">
         <Card className="p-4">
           <div className="flex flex-col md:flex-row gap-3 items-stretch">
-            <label className="flex-1 text-sm flex flex-col gap-1">
-              <span>Cidade</span>
-              <select
-                className="w-full rounded-xl border border-white/20 bg-slate-800 px-3 py-2 text-sm outline-none"
-                value={cidadeSelecionadaId ?? ""}
-                onChange={(e) => setCidadeSelecionadaId(e.target.value)}
-              >
-                {cidades.map((c) => (
-                  <option key={c.id} value={c.id}>
-                    {c.nome} - {c.uf}
-                  </option>
-                ))}
-              </select>
-            </label>
-            <label className="flex-1 text-sm flex flex-col gap-1">
-              <span>Buscar ponto</span>
-              <input
-                className="w-full rounded-xl border border-white/20 bg-white/10 px-3 py-2 text-sm outline-none"
-                placeholder="Ex.: Parque, Museu…"
-                value={buscaPonto}
-                onChange={(e) => setBuscaPonto(e.target.value)}
-              />
-            </label>
+            <SelectField
+              value={cidadeSelecionadaId ?? ""}
+              onChange={(e) => setCidadeSelecionadaId(e.target.value)}
+              label={"Cidade"}
+            >
+              {cidades.map((c) => (
+                <option key={c.id} value={c.id}>
+                  {c.nome} - {c.uf}
+                </option>
+              ))}
+            </SelectField>
+            <TextField
+              label="Buscar ponto turístico"
+              className="w-full rounded-xl border border-white/20 bg-white/10 px-3 py-2 text-sm outline-none"
+              placeholder="Ex.: Parque, Museu…"
+              value={buscaPonto}
+              onChange={(e) => setBuscaPonto(e.target.value)}
+            />
           </div>
 
           <div className="mt-3 flex flex-wrap gap-2">
@@ -143,11 +138,7 @@ const TourismPage: React.FC = () => {
                     <Button size="sm" onClick={() => {}}>
                       Editar
                     </Button>
-                    <Button
-                      variant="danger"
-                      size="sm"
-                      onClick={() => {}}
-                    >
+                    <Button variant="danger" size="sm" onClick={() => {}}>
                       Excluir
                     </Button>
                   </div>

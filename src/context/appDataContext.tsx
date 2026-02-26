@@ -102,6 +102,7 @@ export const AppDataProvider: React.FC<React.PropsWithChildren> = ({
   useEffect(() => {
     if (typeof window === "undefined") return;
 
+
     setLoading(true);
     fetchAppState()
       .then((data: AppState) => setState(data))
